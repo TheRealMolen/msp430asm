@@ -1,0 +1,54 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+
+	"scopeName": "source.msp430asm",
+  "name": "msp430asm",
+  
+	"patterns": [
+    {"include": "#keywords"},
+    {"include": "#addresses"},
+    {"include": "#labels"},
+		{"include": "#strings"},
+    {"include": "#numbers"},
+    {"include": "#registers"},
+    {"include": "#comment"}
+  ],
+  
+	"repository": {
+		"keywords": {
+      "match": "\\b(movx?|d?addc?x?|subc?x?|cmpx?|bi(t|c|s)x?|xorx?|andx?|rr(c|a)m?|rrux|rrax|swpbx|push(m|x)?|swpb|calla?|ret(a|i)?|sxtx?|jeq|jz|jne|jnz|jc|jnc|jn|jnge|jl|jmp|adc|br|clr(c|n|z|a|x)?|decd?(a|x)?|(d|e)int|incd?(a|x)?|inv|nop|pop(m|x)?|rl(a|c)m?x?|sbc|set(c|n|z)|tst(a|x)?|d?adcx?|bra?|dbcx?)([.](b|w|a))?\\b",
+      "name": "keyword.instruction.msp430"
+    },
+    "addresses": {
+      "match": "&0x\\h+",
+      "name": "entity.name.function"
+    },
+    "labels": {
+      "match": "(\\h{4} <.*>)|(<[^>]*>)",
+      "name": "entity.name.function"
+    },
+		"strings": {
+			"name": "string.quoted.double.pants",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.pants",
+					"match": "\\\\."
+				}
+			]
+    },
+    "numbers": {
+      "match": "#?-?(0x)?\\h+\\b",
+      "name": "constant.numeric"
+    },
+    "registers": {
+      "match": "r(4|5|6|7|8|9|10|11|12|13|14|15)|pc|sp|sr|cg1|cg2",
+      "name": "constant.language"
+    },
+    "comment": {
+      "match": ";.*",
+      "name": "comment.line"
+    }
+	}
+}

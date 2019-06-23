@@ -1,0 +1,25 @@
+{
+    "name": "msp430asm",
+    "displayName": "MSP430 Syntax Highlighting",
+    "description": "Syntax Highlighting for MSP430 assembler",
+    "version": "1.0.0",
+    "engines": {
+        "vscode": "^1.35.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "msp430asm",
+            "aliases": ["MSP430 Assembly", "msp430asm"],
+            "extensions": [".s"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "msp430asm",
+            "scopeName": "source.msp430asm",
+            "path": "./syntaxes/msp430asm.tmLanguage.json"
+        }]
+    }
+}
