@@ -6,6 +6,10 @@ Simple syntax highlighting for MSP430 assembler. Loosely based on [https://githu
 
 Provides basic syntax highlighting for MSP430 assembly language
 
+## Installation
+
+Copy the whole folder into ~/.vscode/extensions (mac, linux) or \Users\<you>\.vscode\extensions (win)
+
 ## Release Notes
 
 ### 1.0.0
